@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Importerer stilark -->
+    <link rel="stylesheet" href="styleMain.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    
+    <!-- Importerer Leaflet.js -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    
+    <title>My API - main</title>
+</head>
+<body>
+    <!-- Toppmeny -->
+    <header class="header_main">
+        <div id="menu_bar">
+            <!-- Søkerute -->
+            <input id="searchbar" type="text" placeholder="Enter state" name="searchbar">
+            <button type="submit" onclick="show_me()">
+                <p><i class="fa-solid fa-magnifying-glass"></i></p>
+            </button>
+        </div>
+        
+        <!-- Logo -->
+        <div id="logo_main">
+            <p><a href="index.html"><i class="fa-solid fa-plate-wheat"></i></a></p>
+        </div>
+    </header>
+    
+    <!-- Hovedinnhold -->
+    <section class="main_main">
+        <div id="info">
+            <h1>My API</h1>
+            <p>API er et sett med regler og mekanismer som gjør at én applikasjon eller komponent kan samhandle med andre. API-et er en programmatisk måte for forskjellige programvarekomponenter å kommunisere med hverandre. Det er et sett med regler som lar én programvareapplikasjon snakke med en annen. Det er en programvareformidler som gjør at to applikasjoner kan snakke med hverandre. Med andre ord, et API er budbringeren som leverer forespørselen din til leverandøren du ber om og deretter leverer svaret tilbake til deg.</p>
+        </div>
+        
+        <!-- Kart -->
+        <div id="map1"></div>
+    </section>
+    
+    <!-- Bunntekst -->
+    <footer class="custom-footer">
+        <div class="footer-container">
+            <div class="footer-row">
+                <div class="footer-col">
+                    <h6>Om Oss</h6>
+                    <p class="text-justify">Hos BrewFind er vi dedikert til å hjelpe unge mennesker med å oppdage de beste bryggeriene. Vårt oppdrag er å gi detaljert informasjon og anmeldelser for å gjøre bryggeribesøkene dine minneverdige. Vi støtter og informerer om de nyeste tilbudene og produktene. Vi holder deg oppdatert! Vi støtter din lidenskap <3</p>
+                </div>
+                <div class="footer-col">
+                    <h6>Kategorier</h6>
+                    <ul class="footer-links">
+                        <li><a href="#">Stater</a></li>
+                        <li><a href="#">Bryggerier</a></li>
+                        <li><a href="#">Pubber</a></li>
+                        <li><a href="#">Mest Kjente Bryggerier</a></li>
+                        <li><a href="#">Atomiske Bryggerier</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h6>Hurtiglenker</h6>
+                    <ul class="footer-links">
+                        <li><a href="#">Hjem</a></li>
+                        <li><a href="#">Om</a></li>
+                        <li><a href="#">Kontakt</a></li>
+                        <li><a href="#">Personvern</a></li>
+                        <li><a href="#">Vilkår og Betingelser</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-left">
+                    <p>&copy; 2024 BrewFind. Alle Rettigheter Reservert.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Importerer JavaScript -->
+    <script src="menu.js"></script>
+</body>
+</html>
