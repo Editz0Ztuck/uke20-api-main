@@ -1,119 +1,92 @@
-*{
-    padding:0;
-    margin:0;
+/* Generelle stiler */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box; /* Sikrer at padding og margin ikke påvirker elementets totale bredde/høyde */
 }
-body{
-    padding: .5rem;
+
+body {
+    padding: 0.5rem;
     font-family: 'Roboto', sans-serif;
     background-color: #ffff;
     display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
+    grid-template-rows: auto 1fr auto; /* Radoppsett: header, main, footer */
     grid-template-areas:
-    "header header header"
-    "sidebar main main"
-    "footer footer footer";
-
+        "header"
+        "main"
+        "footer";
+    min-height: 100vh; /* Sikrer at body dekker hele skjermhøyden */
 }
-.header_main{
+
+/* Header-stiler */
+.header_main {
     grid-area: header;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: auto;
     background-color: #1f1f1f;
     align-items: center;
-    filter: drop-shadow(0 0 10px purple); /* Cyan glow effect */
-
+    filter: drop-shadow(0 0 10px purple); /* Lilla glødeeffekt */
 }
 
-.header_main #menu_bar{
+.header_main #menu_bar {
     grid-column-start: 2;
     grid-column-end: 3;
-    
     display: flex;
-    justify-content:center;
-
+    justify-content: center;
 }
-.header_main #menu_bar input{
 
-    width:20rem;
-    height: auto;    
+.header_main #menu_bar input {
+    width: 20rem;
+    height: auto;
     border: 3px solid purple;
-    filter: drop-shadow(0 0 10px #00ffff); /* Cyan glow effect */
+    filter: drop-shadow(0 0 10px #00ffff); /* Cyan glødeeffekt */
     border-radius: 5px;
-    
 }
-.header_main #menu_bar p{
 
+.header_main #menu_bar p {
     font-size: 1.5rem;
     color: purple;
     background-color: lightgray;
-    filter: drop-shadow(0 0 10px #00ffff); /* Cyan glow effect */
+    filter: drop-shadow(0 0 10px #00ffff); /* Cyan glødeeffekt */
 }
+
 #logo_main i {
     color: white;
-    filter: drop-shadow(0 0 10px #00ffff); /* Cyan glow effect */
+    filter: drop-shadow(0 0 10px #00ffff); /* Cyan glødeeffekt */
 }
-.header_main #logo_main{
+
+.header_main #logo_main {
     grid-column: 3;
     padding: 2rem;
     text-align: center;
-
 }
-.header_main #logo_main p{
+
+.header_main #logo_main p {
     font-size: 5rem;
-    
 }
 
-.sidebar{
+/* Sidebar-stiler (hvis nødvendig) */
+.sidebar {
     grid-area: sidebar;
-    background-color:#1f1f1f;
+    background-color: #1f1f1f;
     padding: 5rem 7rem;
     align-items: center;
 }
 
-.sidebar #sidebar_options ul{
+.sidebar #sidebar_options ul {
     list-style: none;
-    padding: 1rem 0 1rem 0;
+    padding: 1rem 0;
 }
-.sidebar #sidebar_options ul li{
+
+.sidebar #sidebar_options ul li {
     padding: 0 0 1rem 0;
     font-size: 25px;
 }
-.main_main{
-    grid-column-start:2;
-    grid-column-end: 3;
-    display: flex;
-    flex-direction: column;
-    background-color: #1f1f1f;
-    
-}
-.main_main #info{
-    padding: 10%;
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: grey;
-    background-color: #1f1f1f;
 
-}
-.main_main #map1{
-   
-    height: 40%;
-    width: 80%;
-    margin-left: 10%;
-    aspect-ratio: 1/1;
-    justify-content: center;
-    filter: drop-shadow(0 0 50px purple); /* Cyan glow effect */
-
-}
-.main_main #map iframe{
-    width: 50%;
-    height: auto;
-    aspect-ratio: 1;
-}
-#sidebar_options #btn{
+#sidebar_options #btn {
     padding: 1rem;
-    width:10rem;
+    width: 10rem;
     height: auto;
     aspect-ratio: 2/1;
     background-color: #000;
@@ -124,32 +97,66 @@ body{
     font-size: 1.9rem;
 }
 
-#sidebar_options #myList{
+#sidebar_options #myList {
     display: none;
     padding: 1rem;
     background-color: #99c9e9;
-    
     border-radius: 5px;
     position: absolute;
     z-index: 1;
 }
-#sidebar_options #myList li{
+
+#sidebar_options #myList li {
     font-size: 1.5rem;
     font-weight: 600;
     color: #ffff;
 }
 
-footer{
+/* Hovedinnhold-stiler */
+.main_main {
+    grid-area: main;
+    display: flex;
+    flex-direction: column;
+    background-color: #1f1f1f;
+    padding: 20px; /* Legger til padding for å unngå at innholdet berører kantene */
+}
+
+.main_main #info {
+    padding: 10%;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: grey;
+    background-color: #1f1f1f;
+}
+
+.main_main #map1 {
+    height: 40%;
+    width: 80%;
+    margin-left: 10%;
+    aspect-ratio: 1/1;
+    justify-content: center;
+    filter: drop-shadow(0 0 50px purple); /* Lilla glødeeffekt */
+}
+
+.main_main #map iframe {
+    width: 50%;
+    height: auto;
+    aspect-ratio: 1;
+}
+
+/* Footer-stiler */
+footer {
     grid-area: footer;
-    background-color:gray;;
+    background-color: gray;
     padding: 1rem;
-   display: flex;
-   justify-content: space-between;
+    display: flex;
+    justify-content: space-between;
     font-size: 1.5rem;
     font-weight: 600;
     color: white;
-    filter: drop-shadow(0 0 10px purple); /* Cyan glow effect */
+    filter: drop-shadow(0 0 10px purple); /* Lilla glødeeffekt */
 }
+
 .custom-footer {
     background-color: #1f1f1f;
     padding: 40px 0 20px;
@@ -199,7 +206,7 @@ footer{
 }
 
 .custom-footer .footer-links a:hover {
-    color: #b19cd9; /* Light purple */
+    color: #b19cd9; /* Lys lilla */
     text-decoration: underline;
 }
 
@@ -215,3 +222,14 @@ footer{
     text-align: left;
 }
 
+/* Responsiv design for footer */
+@media (max-width: 767px) {
+    .custom-footer .footer-bottom {
+        flex-direction: column;
+    }
+    .custom-footer .footer-left,
+    .custom-footer .footer-right {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+}
